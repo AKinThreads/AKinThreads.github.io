@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #000000, #660000);
+    color: white;
+}
+
+header {
+    background: linear-gradient(to right, #660000, #000000);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    background: black;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff3333;
+}
+
+section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 5px solid #ff3333;
+    border-radius: 5px;
+}
+
+.project h3 {
+    margin-top: 0;
+    color: #ff3333;
+}
+
+a {
+    color: #ff3333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: black;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Styled lists in About section */
+#about ul, #about ol {
+    padding-left: 20px;
+}
+
+#about ul {
+    list-style-type: square;
+    padding: 10px;
+    /* background: rgba(255, 255, 255, 0.2); */
+    border-radius: 5px;
+}
+
+#about ol {
+    list-style-type: decimal;
+    padding: 10px;
+    /* background: rgba(255, 255, 255, 0.2); */
+    border-radius: 5px;
+}
+
+#about li {
+    margin: 5px 0;
+    padding-left: 5px;
+}

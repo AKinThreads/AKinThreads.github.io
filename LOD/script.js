@@ -2,8 +2,7 @@ document.getElementById('submit-btn').addEventListener('click', async function()
   const scenario = document.getElementById('scenario').value;
   const adjective = document.getElementById('adjective').value;
   const noun = document.getElementById('noun').value;
-  const responseDiv = document.getElementById('ai-response');
-  const responseText = document.getElementById('response-text');
+  const responseTextArea = document.getElementById('response-text');  // Selects the textarea
 
   // Basic validation
   if (!scenario || !adjective || !noun) {
@@ -14,10 +13,8 @@ document.getElementById('submit-btn').addEventListener('click', async function()
   const prompt = `Scenario: ${scenario}\nSurvival item: ${adjective} ${noun}.\nDetermine if the person survives in a single small sentence.`;
 
   try {
-      // Debugging: Log before sending request
       console.log("Sending request to backend with prompt:", prompt);
 
-      // Call the backend to get AI's response
       const response = await fetch('/get-openai-response', {
           method: 'POST',
           headers: {
@@ -28,32 +25,27 @@ document.getElementById('submit-btn').addEventListener('click', async function()
 
       const data = await response.json();
       
-      // Debugging: Log the response
       console.log("Received response from AI:", data);
 
-      // Check if AI response exists
       if (data.ai_response) {
-          responseText.innerText = data.ai_response;
-          responseDiv.style.display = 'block';  // Show the AI response section
+          responseTextArea.value = data.ai_response;  // Updates the text area
       } else {
-          responseText.innerText = "No response from AI.";
-          responseDiv.style.display = 'block';
+          responseTextArea.value = "No response from AI.";
       }
 
   } catch (error) {
       console.error('Error fetching AI response:', error);
-      responseText.innerText = "Error fetching response. Please try again.";
-      responseDiv.style.display = 'block';
+      responseTextArea.value = "Error fetching response. Please try again.";
   }
 });
 
 document.getElementById('continue-btn').addEventListener('click', function() {
-  document.getElementById('ai-response').style.display = 'none';
   document.getElementById('scenario').value = '';
   document.getElementById('adjective').value = '';
   document.getElementById('noun').value = '';
+  document.getElementById('response-text').value = ''; // Clear response
 });
 
 document.getElementById('quit-btn').addEventListener('click', function() {
-  window.location.href = '/';  // Go back to the home page
+  window.location.href = '/';  // Go back to home page
 });

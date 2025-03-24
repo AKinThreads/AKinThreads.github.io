@@ -1,42 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Life-or-Death AI Game</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life-or-Death AI Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
     <h1>Life-or-Death AI Game</h1>
-    <p>Let's see if you survive based on your choices!</p>
-  </header>
 
-  <section id="game">
-    <div id="scenario-section">
-      <h2>Enter Your Life-or-Death Scenario</h2>
-      <input type="text" id="scenario" placeholder="Enter a scenario" required>
-    </div>
+    <label for="scenario">Player 1, enter a life-or-death scenario:</label>
+    <input type="text" id="scenario" placeholder="Enter scenario...">
 
-    <div id="item-section">
-      <h2>Enter Survival Item</h2>
-      <input type="text" id="adjective" placeholder="Adjective" required>
-      <input type="text" id="noun" placeholder="Noun" required>
-    </div>
+    <label for="adjective">Player 2, enter a one-worded adjective:</label>
+    <input type="text" id="adjective" placeholder="Enter adjective...">
 
-    <button id="submit-btn">Get AI's Verdict</button>
+    <label for="noun">Player 2, enter a one-worded noun:</label>
+    <input type="text" id="noun" placeholder="Enter noun...">
 
-    <div id="ai-response" style="display: none;">
-      <h3>AI's Verdict:</h3>
-      <p id="response-text"></p>
-    </div>
+    <button id="submit-btn">Submit</button>
 
-    <div id="continue-section">
-      <button id="continue-btn">Continue</button>
-      <button id="quit-btn">Quit</button>
-    </div>
-  </section>
+    <h2>AI's Verdict:</h2>
+    <textarea id="response-text" readonly></textarea>  <!-- AI Response Text Area -->
 
-  <script src="script.js"></script>
+    <button id="continue-btn">Continue</button>
+    <button id="quit-btn">Quit</button>
+
+    <script src="script.js"></script>
 </body>
 </html>

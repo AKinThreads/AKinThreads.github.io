@@ -1,2 +1,5 @@
 LOD/OPENAI_API_KEY.env
 LOD/.env
+
+# Local Netlify folder
+.netlify

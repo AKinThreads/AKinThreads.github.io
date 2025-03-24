@@ -3,10 +3,17 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import os
 
-# Load the environment variables from the .env file
-load_dotenv()
+# Force load the .env file from an absolute path
+dotenv_path = os.path.join(os.path.dirname(__file__), ".env")
+load_dotenv(dotenv_path)
 
+# Get API Key
 api_key = os.getenv("OPENAI_API_KEY")
+
+
+if not api_key:
+    raise ValueError("Error: OPENAI_API_KEY not found in .env file")
+
 app = Flask(__name__)
 client = OpenAI(api_key=api_key)
 

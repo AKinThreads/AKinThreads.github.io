@@ -8,7 +8,7 @@ const submitButton = document.getElementById("submit");
 // Function to call the serverless function
 async function getOpenAIResponse(scenario, adjective, noun) {
   try {
-    const response = await fetch("/.netlify/functions/openai", {
+    const response = await fetch("/.netlify/functions/openai/openai", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -12,19 +12,24 @@ client = OpenAI(api_key=api_key)
 
 @app.route('/get-openai-response', methods=['POST'])
 def get_openai_response():
-    data = request.get_json()
-    prompt = data.get('prompt')
+    try:
+        data = request.get_json()
+        prompt = data.get('prompt')
 
-    completion = client.chat.completions.create(
-        model="gpt-4o",
-        messages=[{
-            "role": "system",
-            "content": prompt
-        }]
-    )
+        if not prompt:
+            return jsonify({'error': 'No prompt provided'}), 400
 
-    ai_response = completion.choices[0].message.content
-    return jsonify({'ai_response': ai_response})
+        completion = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[{"role": "system", "content": prompt}]
+        )
+
+        ai_response = completion.choices[0].message.content
+        return jsonify({'ai_response': ai_response})
+
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

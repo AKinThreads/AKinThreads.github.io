@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life-or-Death AI Game</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life-or-Death AI Game</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header>
     <h1>Life-or-Death AI Game</h1>
+    <p>Enter a life-or-death scenario and see if you survive!</p>
+  </header>
 
-    <label for="scenario">Player 1, enter a life-or-death scenario:</label>
-    <input type="text" id="scenario" placeholder="Enter scenario...">
+  <div id="game-container">
+    <h2>Scenario Setup</h2>
+    <label for="scenario">Enter a life-or-death scenario:</label>
+    <input type="text" id="scenario" placeholder="e.g., A wild lion is chasing you" required>
 
-    <label for="adjective">Player 2, enter a one-worded adjective:</label>
-    <input type="text" id="adjective" placeholder="Enter adjective...">
+    <label for="adjective">Enter a one-word adjective:</label>
+    <input type="text" id="adjective" placeholder="e.g., Fierce" required>
 
-    <label for="noun">Player 2, enter a one-worded noun:</label>
-    <input type="text" id="noun" placeholder="Enter noun...">
+    <label for="noun">Enter a one-word noun:</label>
+    <input type="text" id="noun" placeholder="e.g., Spear" required>
 
-    <button id="submit-btn">Submit</button>
+    <button id="submit">Submit Scenario</button>
 
     <h2>AI's Verdict:</h2>
-    <textarea id="response-text" readonly></textarea>  <!-- AI Response Text Area -->
+    <p id="ai-response">The AI verdict will appear here after you submit the scenario.</p>
+  </div>
 
-    <button id="continue-btn">Continue</button>
-    <button id="quit-btn">Quit</button>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

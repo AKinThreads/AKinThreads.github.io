@@ -9,16 +9,18 @@ const submitButton = document.getElementById("submit");
 async function getOpenAIResponse(scenario, adjective, noun) {
   try {
     const response = await fetch("/.netlify/functions/openai/openai", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        scenario,
-        adjective,
-        noun,
-      }),
-    });
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          scenario,
+          adjective,
+          noun,
+        }),
+      });
+      
+
 
     const data = await response.json();
     return data.aiResponse;

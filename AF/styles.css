@@ -1,0 +1,106 @@
+/* General Reset */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #000000, #1642d1, #047f9e);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Heading */
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Select & Input Styling */
+select, input[type="datetime-local"] {
+    margin-top: 5px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #fafafa;
+    cursor: pointer;
+}
+
+/* Checkbox Container */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+/* Styling each checkbox label */
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    color: #666;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+/* Spacing between checkbox and text */
+.checkbox-group input {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+/* Submit Button */
+button {
+    margin-top: 20px;
+    background: #047f9e;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff4757;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

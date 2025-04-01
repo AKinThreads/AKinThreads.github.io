@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>AI Art Commission Form</h2>
+        <form action="AI-Art-Commissions.html" method="get">
+            <!-- Multiple Choice Questions -->
+            <label>1. What style are you looking for?</label>
+            <select name="color" required>
+                <option value="">Select one</option>
+                <option value="red">Anime</option>
+                <option value="blue">Realistic</option>
+                <option value="green">Cyberpunk</option>
+            </select>
+
+            <label>2. How many art pieces are you looking to purchase?</label>
+            <select name="transport" required>
+                <option value="">Select one</option>
+                <option value="car">1-5</option>
+                <option value="bike">5-10</option>
+                <option value="public">Over 10</option>
+            </select>
+
+            <label>3. What is your budget looking like?</label>
+            <select name="movie" required>
+                <option value="">Select one</option>
+                <option value="action">$10</option>
+                <option value="comedy">$25</option>
+                <option value="drama">$50</option>
+            </select>
+
+            <!-- Checkbox Question -->
+            <!-- Checkbox Question -->
+            <label>4. What are your goals with this art?</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="hobby" value="pleasure" required> I want to make a real artist not earn any money for their hard work</label>
+            </div>
+
+
+            <!-- Time/Date Question -->
+            <label>5. Select a deadline:</label>
+            <input type="datetime-local" name="appointment" required>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
